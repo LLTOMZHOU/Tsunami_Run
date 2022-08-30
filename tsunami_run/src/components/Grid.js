@@ -1,6 +1,6 @@
 import {useGridData} from "../hooks/useGridData";
 import {useState} from "react";
-import gridStyles from "../styles/gridStyles.css";
+import "../styles/gridStyles.css";
 
 export const Grid = ({row, col}) => {
     // console.log("re-rendering grid component");
