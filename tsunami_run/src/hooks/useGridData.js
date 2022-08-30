@@ -1,4 +1,4 @@
-import {useState} from "react";
+import {useCallback, useState} from "react";
 
 export const useGridData = ({row, col}) => {
     // initialize a javascript 2d array of 3 rows and 12 columns specifying the initial values for each cell
@@ -17,6 +17,7 @@ export const useGridData = ({row, col}) => {
     initialGrid[2][4].building = true;
 
     const [grid, setGrid] = useState(initialGrid);
+    console.log(grid);
     const setCellPlayer = ({player1, player2, player3}) => {
         let newGrid = [...grid];
         newGrid[row][col].player1 = player1!=null? player1 : grid[row][col].player1;
@@ -24,6 +25,7 @@ export const useGridData = ({row, col}) => {
         newGrid[row][col].player3 = player3!=null? player3 : grid[row][col].player3;
         setGrid(newGrid);
     }
+
     const toggleCellBuilding = () => {
         let newGrid = [...grid];
         newGrid[row][col].building = !grid[row][col].building;
@@ -36,12 +38,15 @@ export const useGridData = ({row, col}) => {
         setGrid(newGrid);
     }
 
-    const rotateBoard = () => {
+    const rotateBoard = useCallback(() => {
         console.log("rotate board");
         let newGrid = [...grid];
         newGrid.forEach(gridRow => gridRow.unshift(gridRow.pop()));
         setGrid(newGrid);
-    }
+        console.log(grid);
+        console.log(newGrid);
+        console.log("rotate board succeeded");
+    },[grid,setGrid]);
 
     return {
         data: grid[row][col],

@@ -3,11 +3,10 @@ import {useState} from "react";
 import gridStyles from "../styles/gridStyles.css";
 
 export const Grid = ({row, col}) => {
-    // console.log(row, col);
     // console.log("re-rendering grid component");
     const {data, setCellPlayer, toggleCellBuilding, toggleCellSuperJump} = useGridData({row, col});
     if(data.building) {
-        console.log(row, col);
+        console.log(row, col, " has a building");
     }
     const [display, setDisplay] = useState(false);
     const handleClick = (e) => {

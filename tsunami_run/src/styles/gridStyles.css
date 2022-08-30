@@ -1,6 +1,6 @@
 .grid-cell-building {
     background-color: orange;
-    height: 25px;
+    /*height: 25px;*/
     margin: 10px;
     width: 35px;
     padding: 20px;
@@ -10,7 +10,7 @@
 
 .grid-cell-superjump {
     background-color: green;
-    height: 25px;
+    /*height: 25px;*/
     margin: 10px;
     width: 35px;
     padding: 20px;
@@ -20,7 +20,7 @@
 
 .grid-cell {
     background-color: white;
-    height: 25px;
+    /*height: 25px;*/
     margin: 10px;
     width: 35px;
     padding: 20px;
@@ -40,5 +40,5 @@
 
 .drop-down{
     z-index: 9;
-    position: absolute;
+    position: relative;
 }

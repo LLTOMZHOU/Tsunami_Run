@@ -6,7 +6,7 @@ export const SuperJumpTracker = ({name, initialValue}) => {
         setSuperJumps(superJumps + 1);
     }
     const decrementSuperJumps = () => {
-        setSuperJumps(superJumps - 1 >= 0?0 : 0);
+        setSuperJumps(superJumps - 1 <= 0?0 : superJumps - 1);
     }
     return (
         <div>
